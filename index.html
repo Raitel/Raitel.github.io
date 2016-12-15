@@ -9,6 +9,97 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <style>
+
+/* Add a dark background color to the footer */
+footer {
+    background-color: #2d2d30;
+    color: #f5f5f5;
+    padding: 32px;
+}
+
+footer p {
+    color: #bdbdbd;
+}
+
+
+
+/* Add a dark background color with a little bit see-through */
+.navbar {
+    margin-bottom: 0;
+    background-color: #2d2d30;
+    border: 0;
+    font-size: 11px !important;
+    letter-spacing: 4px;
+    opacity:0.9;
+}
+
+/* Add a gray color to all navbar links */
+.navbar li a, .navbar .navbar-brand {
+    color: #d5d5d5 !important;
+}
+
+/* On hover, the links will turn white */
+.navbar-nav li a:hover {
+    color: #fff !important;
+}
+
+/* The active link */
+.navbar-nav li.active a {
+    color: #fff !important;
+    background-color:#29292c !important;
+}
+
+/* Remove border color from the collapsible button */
+.navbar-default .navbar-toggle {
+    border-color: transparent;
+}
+
+/* Dropdown */
+.open .dropdown-toggle {
+    color: #fff ;
+    background-color: #555 !important;
+}
+
+/* Dropdown links */
+.dropdown-menu li a {
+    color: #000 !important;
+}
+
+/* On hover, the dropdown links will turn red */
+.dropdown-menu li a:hover {
+    background-color: red !important;
+}
+
+/* Remove rounded borders from list */
+.list-group-item:first-child {
+    border-top-right-radius: 0;
+    border-top-left-radius: 0;
+}
+
+.list-group-item:last-child {
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+/* Remove border and add padding to thumbnails */
+.thumbnail {
+    padding: 0 0 15px 0;
+    border: none;
+    border-radius: 0;
+}
+
+.thumbnail p {
+    margin-top: 15px;
+    color: #555;
+}
+
+.bg-1 {
+    background: #2d2d30;
+    color: #black;
+}
+.bg-1 h3 {color: #fff;}
+.bg-1 p {color:#bdbdbd; font-style: italic;}
+
 .container {
     padding: 80px 120px;
 }
@@ -90,8 +181,8 @@
 
 <body>
 
-<div class="container text-center">
-  <h3>WELCOME TO MY PAGE!!</h3>
+<div id ="interest" class="container text-center">
+  <h3>WELCOME TO MY PERSONAL PAGE!!</h3>
   <p>    Hi, I am Qiguang He, or you can call me Raitel (pronounced as ray-tell) if you think it would be easier to remember or pronounce.</p>
   <p>
     I am from Queen in the New York City area and my high school is Francis Lewis High School. I am currently studying on Computer Science.</p>
@@ -155,7 +246,52 @@
 </div>
 
 
-<div class="container">
+
+
+
+
+
+<div id="academics" class="bg-1">
+
+  <div class="container">
+
+    <h3 class="text-center">About My Academics</h3>
+    <p class="text-center">in high school(Francis Lewis)</p>
+    <div class="row text-center">
+      <div class="col-sm-6">
+        <div class="thumbnail">
+          <img src="http://ww1.sinaimg.cn/mw690/78da6f85gw1fas6pxd2rej20ci08cq4i.jpg" alt="Math">
+          <p><strong>Math</strong></p>
+          <p>Received 100 on Pre-Calculus<br>Received 95 on AP Calculus BC</p>
+
+        </div>
+      </div>
+
+      <div class="col-sm-6">
+        <div class="thumbnail">
+          <img src="http://ww3.sinaimg.cn/mw690/78da6f85gw1fas6pyn3luj20ci08cdh3.jpg" alt="Physics">
+          <p><strong>Physics</strong></p>
+          <p>Reveived 96 on Regular Physics<br>Received 100 on AP Physics 2</p>
+
+        </div>
+      </div>
+    </div>
+
+    <h3 class="text-center">Honors received (9th Grade and later)</h3>
+    <p class="text-center">Well..<br> I have gotton a little awards at least..</p>
+
+    <ul class="list-group">
+      <li class="list-group-item">2012 - 3rd Place of 2012 Hope Cup Math Competition</li>
+      <li class="list-group-item">2012 - Top 20 of the Best Musicians Competition</li>
+      <li class="list-group-item">2012 - 2nd Place of Halma Competition</li>
+      <li class="list-group-item">2013 - Student of the Month, Math, Nov</li>
+
+    </ul>
+  </div>
+</div>
+
+
+<div id="contact" class="container">
   <h3 class="text-center">Contact</h3>
   <p class="text-center"><em>If you have anything want to say to me..</em></p>
   <div class="row test">
@@ -186,6 +322,63 @@
 
 
 
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#myCarousel">Raitel's Personal Page</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#myCarousel">HOME</a></li>
+        <li><a href="#interest">INTEREST</a></li>
+        <li><a href="#academics">ACADEMICS</a></li>
+        <li><a href="#contact">CONTACT</a></li>
+
+
+        </li>
+
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<footer class="text-center">
+  </a><br><br>
+  <p>Qiguang He, CSE199 Final Project, 2016</p>
+</footer>
+
+<script>
+$(document).ready(function(){
+  // Add smooth scrolling to all links in navbar + footer link
+  $(".navbar a, footer a[href='#myPage']").on('click', function(event) {
+
+  // Make sure this.hash has a value before overriding default behavior
+  if (this.hash !== "") {
+
+    // Prevent default anchor click behavior
+    event.preventDefault();
+
+    // Store hash
+    var hash = this.hash;
+
+    // Using jQuery's animate() method to add smooth page scroll
+    // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+    $('html, body').animate({
+      scrollTop: $(hash).offset().top
+    }, 900, function(){
+
+      // Add hash (#) to URL when done scrolling (default click behavior)
+      window.location.hash = hash;
+      });
+    } // End if
+  });
+})
+</script>
 
 
 
